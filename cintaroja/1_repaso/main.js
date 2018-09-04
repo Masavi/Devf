@@ -245,3 +245,105 @@ for (var i = 0; i < str.length; i++) {
 }
 
 console.log(miNuevaCadena);
+
+/*
+---------------------------------------------
+                  Funciones
+---------------------------------------------
+*/
+
+/* Una función ejecuta todo el código contenido
+   entre llaves {}. La palabra reservada "return"
+   nos permite devolver algún valor para utilizarlo
+   en algún otro lugar.
+*/
+function miFuncion() {
+  return "¡Hola!";
+}
+
+/* Podemos ejecutar la función y guardar el resultado
+   en una variable. "Return" devuelve el mensaje "¡Hola!",
+   este será almacenado en la variable "mensaje"
+*/
+let mensaje = miFuncion();
+
+// Mostramos el contenido de "mensaje" en consola.
+console.log(mensaje);
+
+/* También podemos mostrar el valor de devolución
+   de la función mediante un console.log, es decir,
+   cachamos lo que manda el "return" de la función
+   y lo mostramos en consola.
+
+   Es importante aclarar que, si solo ejecutamos
+   nuestra función, es decir, hacemos lo siguiente:
+                    miFuncion();
+   no se mostrará nada en ningún lugar, ya que no
+   estamos haciendo nada con lo que devuelve la función.
+*/
+console.log(miFuncion());
+
+
+/* Las funciones llevan paréntesis () porque éstas
+   pueden llevar "parámetros". Los parámetros se
+   escriben dentro de los paréntesis.
+
+   Aún si la función no usará parámetros, siempre
+   debemos escribir los paréntes, aunque queden vacíos.
+*/
+function miFuncion2(mensaje) {
+  console.log(mensaje);
+}
+
+/* Algo interesante ocurre al ejecutar la función que definimos
+   en la línea de arriba (miFuncion2). En consola Podemos
+   observar el siguiente resultado:
+
+   -> "este es el mensaje"
+   -> undefined
+
+   Además de mostrarnos el console.log que se ejecuta al llamar
+   a la función miFuncion2(), también obtenemos un UNDEFINED.
+   Esto ocurre porque en esta ocasión no hicimos uso de la palabra
+   reservada RETURN. Al no usar un return, nos devuelve un mensaje
+   de "undefined", esto porque no está definido un valor de devolución.
+
+   En otras palabras, si no usamos RETURN dentro de nuestras funciones,
+   obtendremos un UNDEFINED. El que te aparezca este UNDEFINED no afecta en nada.
+*/
+miFuncion2("este el mensaje");
+
+/* Las funciones pueden tener cero, uno o muchos parámetros.
+   En este caso, la función "suma" recibe dos parámetros, que
+   son dos números que serán sumados.
+*/
+function suma(num1, num2) {
+  return num1 + num2;
+}
+
+console.log(suma(5, 3));
+
+/* Es posible escribir tantas líneas de código como nosotros deseemos dentro
+   de las llaves {} de nuestra función. Por ejemplo, podemos hacer una función
+   utilizando el código del ejercicio que realizamos en la primera sesión, donde
+   convertíamos cualquier palabra en cAmElCaSe, es decir, alternamos los caracteres
+   de una palabra entre mayúsculas y minúsculas.
+*/
+function minusMayus(palabra) {
+
+  let miNuevaCadena = ""
+
+  for (var i = 0; i < palabra.length; i++) {
+    if (i % 2 == 0) {
+      miNuevaCadena = miNuevaCadena + palabra.charAt(i).toLowerCase();
+    } else miNuevaCadena = miNuevaCadena + palabra.charAt(i).toUpperCase();
+  }
+
+  return miNuevaCadena;
+}
+
+/* Para hacer uso de nuestra nueva función, simplemente ejecutamos
+   la función minusMayus() y mandamos dentro de los paréntesis la
+   palabra que deseemos convertir.
+*/
+console.log(minusMayus("coco"));
